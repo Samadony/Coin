@@ -1,0 +1,20 @@
+@startuml coin_class
+
+Coin +-- CoinState
+
+enum CoinState
+{
+    eHeads
+    eTails
+}
+
+class Coin
+{
+    - CoinState mCoinState
+    --
+    + Coin(CoinState const coinInitialState = eHeads)
+    + std::string FlipCoin()
+    + std::string GetCoinState() const
+}
+
+@enduml

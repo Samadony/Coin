@@ -1,0 +1,19 @@
+@startuml coin_state_diagram
+
+hide empty description
+scale 300 width
+
+state entry_choice <<choice>>
+
+[*] --> entry_choice : [mCoinState] 
+
+entry_choice --> Tails
+entry_choice --> Heads
+
+Heads -> Tails : flip
+Tails -> Heads : flip
+
+Heads --> [*] : Esc
+Tails --> [*] : Esc
+
+@enduml

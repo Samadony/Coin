@@ -15,9 +15,9 @@ std::string Coin::FlipCoin()
 
     std::uniform_int_distribution<> dis(0, coinSet.size() - 1);
     int index = dis(generatror);
-    auto it = coinSet.begin();
-    std::advance(it, index);
-    mCoinState = *it;
+    auto ptr = coinSet.begin();
+    std::advance(ptr, index);
+    mCoinState = *ptr;
     return GetCoinState();
 }
 
